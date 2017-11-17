@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="" ng-init="person={firstName:'Bimal',lastName:'Parajuli'};points=[0,1,2,3]">
+
+        <p>The last name is {{ person.lastName }}</p>
+        <p>The second number is {{ points[1] }}</p>
+        <p>The third number is <span ng-bind="points[2]"></span></p>
+
+    </div>
+
+
+</body>
+
+</html>

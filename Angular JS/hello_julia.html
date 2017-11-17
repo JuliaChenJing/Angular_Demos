@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<!--AngularJS is a JavaScript framework. It is a library written in JavaScript.
+AngularJS is distributed as a JavaScript file, and can be added to a web page with a script tag:-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<body>
+    <!--The ng-app directive defines an AngularJS application.-->
+    <div ng-app="">
+
+        <p>Input your name in the input box:</p>
+        <!--The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.-->
+        <p>Name : <input type="text" ng-model="name" placeholder="Enter your name here"></p>
+
+
+        <!--AngularJS expressions can be written inside double braces: {{ expression }}.
+                AngularJS expressions can also be written inside a directive: ng-bind="expression".
+
+                AngularJS expressions are written inside double braces: {{ expression }}.   
+                AngularJS will "output" data exactly where the expression is written.-->
+        <p>
+            Hello {{name}}
+        </p>
+
+        <!--The ng-bind directive binds application data to the HTML view.-->
+        <p>How are you
+            <a ng-bind="name"></a>
+        </p>
+
+
+    </div>
+
+   
+
+</body>
+
+</html>

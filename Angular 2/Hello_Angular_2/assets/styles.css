@@ -1,0 +1,13 @@
+h2 {
+  color: #369;
+  font-family: Georgia, Helvetica, sans-serif;
+  font-size: 250%;
+}
+p {
+  color: #969;
+  font-family: Georgia, Helvetica, sans-serif;
+  font-size: 250%;
+}
+body {
+  margin: 2em;
+}
