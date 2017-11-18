@@ -10,7 +10,10 @@
 <body>
   <h1> Hello Angular!</h1>
   <div ng-app="myApp" ng-controller="namesCtrl">
-    {{firstname}} {{lastname}}
+    show first name:true
+    <h3 ng-show=show>> {{firstname}}</h3>
+    hide last name:false
+    <h3 ng-hide=hide>> {{lastname}}</h3>
   </div>
 
 
