@@ -11,7 +11,7 @@
         AngularJS controllers control AngularJS applications.
         The ng-app directive defines the application, the ng-controller directive defines the controller.-->
   <div ng-app="myApp" ng-controller="myCtrl">
-    <form ng-submit="submitName()" ng-controller="myCtrl">
+    <form ng-submit="submitName()" >
       First Name:
       <input type="text" ng-model="firstName" required=true>
       <br> Last Name:
@@ -30,7 +30,7 @@
     </ul>
 
 
-    <form ng-submit="submitText()" ng-controller="myCtrl">
+    <form ng-submit="submitText()" >
       Enter text and hit enter:
       <input type="text" ng-model="text" name="text" required=true />
       <input type="submit" value="Submit" />
