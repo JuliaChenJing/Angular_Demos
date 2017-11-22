@@ -1,7 +1,8 @@
 # Angular-Demo
 
 https://www.eduonix.com/blog/web-programming-tutorials/learn-build-app-scratch-using-angular-2-program/
-
+Installation of the Node.js: Node.js installer for Windows or Macintosh can be downloaded from the following link.
+https://nodejs.org/en/download/
 
 1. File package.json : It has the list of all packages that are required to kick Start the app. It defines the handful of useful scripts as shown below.
 
