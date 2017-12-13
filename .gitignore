@@ -1,49 +1,19 @@
-# Compiled class file
-*.class
+# Build and Release Folders
+bin/
+bin-debug/
+bin-release/
+[Oo]bj/ # FlashDevelop obj
+[Bb]in/ # FlashDevelop bin
 
-# Log file
-*.log
+# Other files and folders
+.settings/
 
-# BlueJ files
-*.ctxt
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-
-
-/build/
-/benchpress-build/
-.DS_Store
-gen_docs.disable
-test.disable
-regression/temp*.html
-performance/temp*.html
-.idea/workspace.xml
-*~
-*.swp
-angular.js.tmproj
-node_modules/
-bower_components/
-angular.xcodeproj
-.idea
-*.iml
-.agignore
-.lvimrc
-libpeerconnection.log
-npm-debug.log
-/tmp/
-/scripts/bower/bower-*
-.vscode
-*.log
-*.stackdump
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
