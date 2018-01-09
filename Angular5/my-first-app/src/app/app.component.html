@@ -9,37 +9,49 @@
 <h2>Practice: </h2>
 
 <h3>Double Binding: </h3>
-<input type="text" [(ngModel)]="name">
-<p> {{name}}</p>>
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <input type="text" [(ngModel)]="name">
+      <p> {{name}}</p>>
+    </div>
+  </div>
+</div>
 
 <h3>Components: </h3>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-        <app-servers></app-servers>
-        <app-success-alert></app-success-alert>
-        <app-warning-alert></app-warning-alert>
+      <app-servers></app-servers>
+      <!--  alerts-->
+      <app-success-alert></app-success-alert>
+      <app-warning-alert></app-warning-alert>
     </div>
   </div>
 </div>
 
-
 <h3>Hyper Link: </h3>
-<ul>
-  <li>
-    <h2>
-      <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a>
-    </h2>
-  </li>
-  <li>
-    <h2>
-      <a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a>
-    </h2>
-  </li>
-  <li>
-    <h2>
-      <a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a>
-    </h2>
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <ul>
+        <li>
+          <h2>
+            <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a>
+          </h2>
+        </li>
+        <li>
+          <h2>
+            <a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a>
+          </h2>
+        </li>
+        <li>
+          <h2>
+            <a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a>
+          </h2>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
