@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   userName: string = '';
   showSecret: boolean = false;
+  log=[];
   allowNewServer: boolean = false;
   serverCreationStatus = 'No server was created!;'
   serverName: string = '';
@@ -38,4 +39,8 @@ export class ServersComponent implements OnInit {
     this.userName = '';
   }
 
+  onClicking(event: Event){
+    this.showSecret=!this.showSecret;
+    this.log.push(this.log.length+1);
+  }
 }

@@ -46,9 +46,14 @@
             <hr>
             <div>
 
-                 <!--  display details  -->
-                    <button class="btn btn-primary" (click)="showSecret=!showSecret" >Display Details</button>
-                    <p *ngIf ="showSecret">Secret Password=tuna</p>
+                <!--  display details  -->
+                <button class="btn btn-primary" (click)=onClicking()>Display Details</button>
+                <div  *ngFor="let logItem of log" 
+                [ngStyle]="{backgroundColor:logItem>5? 'blue':'transparant'}"
+                [ngClass]="{'white-text':logItem>5}">
+                {{logItem}}
+                </div>
+                <p *ngIf="showSecret">Secret Password=tuna</p>
             </div>
 
             <hr>
