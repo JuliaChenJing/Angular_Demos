@@ -30,5 +30,6 @@ export class ServersComponent implements OnInit {
 
   onResetUser(event: Event) {
     this.userName='';
+  }
 
 }
