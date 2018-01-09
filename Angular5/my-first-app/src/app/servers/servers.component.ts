@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+  userName: string = '';
+  showSecret: boolean = false;
   allowNewServer: boolean = false;
   serverCreationStatus = 'No server was created!;'
   serverName: string = '';
-  userName:string='';
-  serverCreated:boolean=false;
-  servers=['Test Server 1','Test Server 2']
+
+  serverCreated: boolean = false;
+  servers = ['Test Server 1', 'Test Server 2']
 
   constructor() {
     setTimeout(() => { this.allowNewServer = true }, 2000)
@@ -23,8 +25,8 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
-    this.serverCreationStatus = 'Server was created! Name is '+this.serverName;
-    this.serverCreated=true;
+    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
+    this.serverCreated = true;
     this.servers.push(this.serverName)
   }
 
@@ -33,7 +35,7 @@ export class ServersComponent implements OnInit {
   }
 
   onResetUser(event: Event) {
-    this.userName='';
+    this.userName = '';
   }
 
 }
