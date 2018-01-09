@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';//needed for two way data biding
 
 
 import { AppComponent } from './app.component';
@@ -16,7 +16,7 @@ import { ServersComponent } from './servers/servers.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule//needed for two way data biding
   ],
   providers: [],
   bootstrap: [AppComponent]
