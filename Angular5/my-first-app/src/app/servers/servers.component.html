@@ -21,8 +21,6 @@
 
                 <b>String Interpolation:</b>
                 <p [innerText]="allowNewServer"></p>
-
-                <hr>
             </div>
             <hr>
             <div>
@@ -31,8 +29,8 @@
                 <ng-template #noServer>
                     <p>No server was created!</p>
                 </ng-template>
-                <app-server></app-server>
-                <app-server></app-server>
+                <app-server *ngFor="let server of servers"></app-server>
+
             </div>
             <hr>
             <div class="column2">
