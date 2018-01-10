@@ -52,5 +52,10 @@ export class ServersComponent implements OnInit {
     const position = id;
     this.servers.splice(position, 1);
   }
+
+  onRemoveLog(id: number) {
+    const position = id;
+    this.log.splice(position, 1);
+  }
 }
 

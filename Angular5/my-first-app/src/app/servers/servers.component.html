@@ -48,7 +48,7 @@
 
                 <!--  display details  -->
                 <button class="btn btn-primary" (click)=onClicking()>Display Details</button>
-                <div *ngFor="let logItem of log; let i=index" [ngStyle]="{backgroundColor:i>5? 'blue':'transparant'}" [ngClass]="{'white-text':i>5}">
+                <div *ngFor="let logItem of log; let i=index" [ngStyle]="{backgroundColor:i>5? 'blue':'transparant'}" [ngClass]="{'white-text':i>5}"  (click)="onRemoveLog(i)">
                     {{logItem}}
                 </div>
                 <p *ngIf="showSecret">Secret Password=tuna</p>
