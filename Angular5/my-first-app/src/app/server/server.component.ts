@@ -10,10 +10,13 @@ import { ServersComponent } from '../servers/servers.component';
 })
 
 export class ServerComponent {
-    serverId: number = 10;
+    serverName: string='';
+    serverId: number=0;
     serverStatus: string = 'off';
 
-    constructor() {
+    constructor(serverName: string, serverId: number) {
+        this.serverName = serverName;
+        this.serverId = serverId;
         this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
     }
     getServerStatus() {

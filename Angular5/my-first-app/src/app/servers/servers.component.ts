@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerComponent } from '../server/server.component';
 
 @Component({
   selector: 'app-servers',
@@ -10,13 +11,16 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   userName: string = '';
   showSecret: boolean = false;
-  log=[];
+  log = [];
   allowNewServer: boolean = false;
   serverCreationStatus = 'No server was created!;'
-  serverName: string = '';
+  serverName: string = "test server";
 
   serverCreated: boolean = false;
-  servers = ['Test Server 1', 'Test Server 2']
+  servers: ServerComponent[] = [
+    new ServerComponent("server1", 1),
+    new ServerComponent("server2", 2)
+  ];
 
   constructor() {
     setTimeout(() => { this.allowNewServer = true }, 2000)
@@ -25,10 +29,10 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
   }
 
-  onCreateServer() {
+  onCreateServer(event: Event) {
     this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
     this.serverCreated = true;
-    this.servers.push(this.serverName)
+    this.servers.push(new ServerComponent(this.serverName, 1));
   }
 
   onUpdateServerName(event: Event) {
@@ -39,8 +43,14 @@ export class ServersComponent implements OnInit {
     this.userName = '';
   }
 
-  onClicking(event: Event){
-    this.showSecret=!this.showSecret;
+  onClicking(event: Event) {
+    this.showSecret = !this.showSecret;
     this.log.push(new Date());
   }
+
+  onRemoveServer(id: number) {
+    const position = id + 1;
+    this.servers.splice(position, 1);
+  }
 }
+
