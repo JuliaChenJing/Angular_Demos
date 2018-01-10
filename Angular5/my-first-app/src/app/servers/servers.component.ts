@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { ServerComponent } from '../server/server.component';
 
 @Component({
@@ -8,7 +8,7 @@ import { ServerComponent } from '../server/server.component';
   <app-server></app-server>`,*/
   styleUrls: ['./servers.component.css']
 })
-export class ServersComponent implements OnInit {
+export class ServersComponent {
   userName: string = '';
   showSecret: boolean = false;
   log = [];
@@ -21,6 +21,10 @@ export class ServersComponent implements OnInit {
     new ServerComponent("server1", 1),
     new ServerComponent("server2", 2)
   ];
+
+
+  /*servers = [{ name: 'server1', serverId: 1, serverStatus: 'on' },
+  { name: 'server2', serverId: 2, serverStatus: 'off' }];*/
 
   constructor() {
     setTimeout(() => { this.allowNewServer = true }, 2000)
