@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServerComponent } from '../server/server.component';
 
 @Component({
@@ -27,10 +27,17 @@ export class ServersComponent {
   { name: 'server2', serverId: 2, serverStatus: 'off' }];*/
 
   constructor() {
-    setTimeout(() => { this.allowNewServer = true }, 2000)
-  }
 
+  }
+  /*
+  Mostly we use ngOnInit for all the initialization/declaration and avoid stuff to work in the 
+  constructor. The constructor should only be used to initialize class members but shouldn't 
+  do actual "work".
+  
+  So you should use constructor() to setup Dependency Injection and not much else. ngOnInit()
+   is better place to "start" - it's where/when components' bindings are resolved.*/
   ngOnInit() {
+    setTimeout(() => { this.allowNewServer = true }, 2000)
   }
 
   onCreateServer(id: number) {
