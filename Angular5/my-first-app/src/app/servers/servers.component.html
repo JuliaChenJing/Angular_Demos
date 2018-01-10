@@ -12,9 +12,9 @@
                 <ng-template #noServer>
                     <p>No server was created!</p>
                 </ng-template>
-                
+
                 <a href="#" class="list-group-item clearfix" *ngFor="let server of servers;let i=index" (click)="onRemoveServer(i)">
-                    <p> {{'server.serverName'}} with ID {{server.serverId}} is {{server.getServerStatus()}}. </p>
+                    <p> {{server.serverName}} with ID {{server.serverId}} is {{server.getServerStatus()}}. </p>
                 </a>
 
             </div>
