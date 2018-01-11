@@ -1,6 +1,6 @@
 <div class="container">
   <!--button part-->
-  <app-cockpit (serverCreatedFromCockpit)="onServerAdded($event)" (blueprintCreatedFromCockpit)="onBlueprintAdded($event)">
+  <app-cockpit (serverCreatedFromCockpitComponent)="onServerAdded($event)" (blueprintCreatedFromCockpitComponent)="onBlueprintAdded($event)">
   </app-cockpit>
 
   <hr>
@@ -8,7 +8,7 @@
     <!--display part-->
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let server of serverElementsFromApp" [serverFromServer-Element]="server"></app-server-element>
+      <app-server-element *ngFor="let server of serversFromAppComponent" [serverFromServerElementComponent]="server"></app-server-element>
     </div>
   </div>
 </div>
