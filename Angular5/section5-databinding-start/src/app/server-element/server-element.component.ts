@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ServerElementComponent implements OnInit {
 
   //add a decorator to show which property you want to expose 
-  @Input() element: { type: string, name: string, content: string }
+  @Input('srvElement') element: { type: string, name: string, content: string }
   constructor() { }
 
   ngOnInit() {
