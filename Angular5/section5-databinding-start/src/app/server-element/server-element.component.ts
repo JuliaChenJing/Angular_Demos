@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ViewEncapsulation } from '@angular/core/src/metadata/view';
+import { Component, OnInit, Input,ViewEncapsulation } from '@angular/core';
+
 
 @Component({
   selector: 'app-server-element',
