@@ -14,9 +14,9 @@ export class ServersComponent {
   log = [];
   allowNewServer: boolean = false;
   serverCreationStatus = 'No server was created!;'
-  serverName: string = "test server";
+  editedServerName: string = "test server";
 
-  serverCreated: boolean = false;
+  isServerCreated: boolean = false;
   servers: ServerComponent[] = [
     new ServerComponent("server1", 1),
     new ServerComponent("server2", 2)
@@ -41,13 +41,13 @@ export class ServersComponent {
   }
 
   onCreateServer(id: number) {
-    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
-    this.serverCreated = true;
-    this.servers.push(new ServerComponent(this.serverName, this.servers.length + 1));
+    this.serverCreationStatus = 'Server was created! Name is ' + this.editedServerName;
+    this.isServerCreated = true;
+    this.servers.push(new ServerComponent(this.editedServerName, this.servers.length + 1));
   }
 
   onUpdateServerName(event: Event) {
-    this.serverName = (<HTMLInputElement>event.target).value;
+    this.editedServerName = (<HTMLInputElement>event.target).value;
   }
 
   onResetUser(event: Event) {

@@ -14,7 +14,7 @@ export class ServerComponent {
     serverName: string = '';
     serverId: number = 0;
     serverStatus: string = 'off';
-    @Input() element: ServerComponent;
+    @Input() serverFromServerComponent: ServerComponent;
 
     constructor(serverName: string, serverId: number) {
         this.serverName = serverName;
