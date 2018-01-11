@@ -13,17 +13,17 @@
                     <p>No server was created!</p>
                 </ng-template>
 
-
+                <!--method one-->
                 <a href="#" class="list-group-item clearfix" *ngFor="let server of servers;let i=index" (click)="onRemoveServer(i)">
                     <p [ngStyle]="{backgroundColor:server.getColor()}" [ngClass]="{online:server.serverStatus==='online'}">
                         {{server.serverName}} with ID {{server.serverId}} is {{server.getServerStatus()}}. </p>
                 </a>
 
 
-                <!-- not working....
+                <!--method two-
                 <app-server *ngFor="let server of servers; let i=index" (click)="onRemoveServer(i)" [element]="server">
-                </app-server>  -->
-
+                </app-server>  
+            -->
             </div>
             <hr>
             <div class="column1">
