@@ -8,7 +8,8 @@
   <!--display part-->
   <div class="row">
     <div class="col-xs-12">
-      <app-server-element *ngFor="let server of serversFromAppComponent" [serverFromServerElementComponent]="server">
+      <button class="btn btn-primary" (click)="onChangeFirstElement()" >Change first Element</button>
+      <app-server-element *ngFor="let server of serversFromAppComponent" [serverFromServerElementComponent]="server"  [name]="server.name">
         <!--ngIf-->
         <strong *ngIf="server.type === 'server'" style="color: red">{{server.content }}</strong>
         <strong *ngIf="server.type === 'blueprint'" style="color: blue">{{ server.content }}</strong>

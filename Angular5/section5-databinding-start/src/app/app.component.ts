@@ -24,4 +24,8 @@ export class AppComponent {
       content: blueprintData.serverContent
     });
   }
+  onChangeFirstElement() {
+    this.serversFromAppComponent[0].name = "First Element Name Changed!";
+
+  }
 }
