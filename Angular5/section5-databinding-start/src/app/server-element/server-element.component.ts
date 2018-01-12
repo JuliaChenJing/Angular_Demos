@@ -1,5 +1,8 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges } from '@angular/core';
-import { SimpleChange } from '@angular/core/src/change_detection/change_detection_util';
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges, 
+  SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked ,OnDestroy} from '@angular/core';
+import { AfterViewChecked, AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
+
+
 
 
 
@@ -12,11 +15,12 @@ import { SimpleChange } from '@angular/core/src/change_detection/change_detectio
   // Emulated(default, Shadow DOM)
   //None (No Shadow Dom),global effection
 })
-export class ServerElementComponent implements OnInit, OnChanges {
+export class ServerElementComponent
+  implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit,OnDestroy {
 
   //add a decorator to show which property you want to expose 
   @Input('serverFromServerElementComponent') element: { type: string, name: string, content: string }
-  @Input() name:string;
+  @Input() name: string;
   constructor() {
     console.log("constructor called!");
   }
@@ -30,4 +34,43 @@ export class ServerElementComponent implements OnInit, OnChanges {
     console.log("ngOnChanges called!");
     console.log(changes);
   }
+
+  ngDoCheck() {
+    console.log("ngDoCheck called!");
+  }
+
+  ngAfterContentInit() {
+
+    console.log("ngAfterContentInit called!");
+
+  }
+
+
+  ngAfterContentChecked() {
+
+    console.log("ngAfterContentChecked called!");
+
+  }
+
+
+  ngAfterViewInit() {
+
+    console.log("ngAfterViewInit called!");
+
+  }
+
+
+  ngAfterViewChecked() {
+
+    console.log("ngAfterViewChecked called!");
+
+  }
+
+  ngOnDestroy() {
+    
+        console.log("ngOnDestroy called!");
+    
+      }
+
+
 }

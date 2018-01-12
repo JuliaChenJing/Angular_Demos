@@ -28,4 +28,9 @@ export class AppComponent {
     this.serversFromAppComponent[0].name = "First Element Name Changed!";
 
   }
+
+  onDestroyFirstElement() {
+    this.serversFromAppComponent.splice(0, 1);
+
+  }
 }
