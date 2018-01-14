@@ -1,8 +1,7 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges, 
-  SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked ,OnDestroy} from '@angular/core';
-import { AfterViewChecked, AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
-
-
+import {
+  Component, OnInit, Input, ViewEncapsulation, OnChanges,
+  SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, OnDestroy, ViewChild, ElementRef
+} from '@angular/core';
 
 
 
@@ -16,11 +15,12 @@ import { AfterViewChecked, AfterViewInit } from '@angular/core/src/metadata/life
   //None (No Shadow Dom),global effection
 })
 export class ServerElementComponent
-  implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit,OnDestroy {
+  implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, OnDestroy, ElementRef, ViewChild {
 
   //add a decorator to show which property you want to expose 
   @Input('serverFromServerElementComponent') element: { type: string, name: string, content: string }
   @Input() name: string;
+  @ViewChild('heading') header: ElementRef;
   constructor() {
     console.log("constructor called!");
   }
@@ -28,6 +28,7 @@ export class ServerElementComponent
   ngOnInit() {
 
     console.log("ngOnInit called!");
+    console.log('Text Content: '+this.header.nativeElement.textContent);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -45,7 +46,6 @@ export class ServerElementComponent
 
   }
 
-
   ngAfterContentChecked() {
 
     console.log("ngAfterContentChecked called!");
@@ -56,6 +56,7 @@ export class ServerElementComponent
   ngAfterViewInit() {
 
     console.log("ngAfterViewInit called!");
+    console.log('Text Content: '+this.header.nativeElement.textContent);
 
   }
 
@@ -67,10 +68,10 @@ export class ServerElementComponent
   }
 
   ngOnDestroy() {
-    
-        console.log("ngOnDestroy called!");
-    
-      }
+
+    console.log("ngOnDestroy called!");
+
+  }
 
 
 }
