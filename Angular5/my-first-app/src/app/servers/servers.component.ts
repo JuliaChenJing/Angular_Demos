@@ -4,10 +4,9 @@ import { ServerComponent } from '../server/server.component';
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
-  /*template: `<app-server></app-server>
-  <app-server></app-server>`,*/
   styleUrls: ['./servers.component.css']
 })
+
 export class ServersComponent {
   userName: string = '';
   showSecret: boolean = false;
