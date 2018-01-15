@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { Server } from './server.model';
 
 @Component({
     selector: 'app-server',
@@ -11,16 +11,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class ServerComponent {
 
-    serverName: string = '';
-    serverId: number = 0;
-    serverStatus: string = 'off';
+ 
     @Input() serverFromServerComponent: ServerComponent;
 
-    constructor(serverName: string, serverId: number) {
-        this.serverName = serverName;
-        this.serverId = serverId;
-        this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
-    }
 
 
     /*
@@ -30,14 +23,6 @@ do actual "work".
  
 So you should use constructor() to setup Dependency Injection and not much else. ngOnInit()
  is better place to "start" - it's where/when components' bindings are resolved.*/
-    ngOnInit() {
-    }
-    getServerStatus() {
-        return this.serverStatus;
-    }
-
-    getColor() {
-        return this.serverStatus === 'online' ? 'green' : 'red';
-    }
+  
    
 }

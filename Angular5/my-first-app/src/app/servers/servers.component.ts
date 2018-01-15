@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ServerComponent } from '../server/server.component';
+import { Server } from '../server/server.model';
+
 
 @Component({
   selector: 'app-servers',
@@ -16,9 +17,9 @@ export class ServersComponent {
   editedServerName: string = "test server";
 
   isServerCreated: boolean = false;
-  servers: ServerComponent[] = [
-    new ServerComponent("server1", 1),
-    new ServerComponent("server2", 2)
+  servers: Server[] = [
+    new Server("server1", 1),
+    new Server("server2", 2)
   ];
 
 
@@ -42,7 +43,7 @@ export class ServersComponent {
   onCreateServer(id: number) {
     this.serverCreationStatus = 'Server was created! Name is ' + this.editedServerName;
     this.isServerCreated = true;
-    this.servers.push(new ServerComponent(this.editedServerName, this.servers.length + 1));
+    this.servers.push(new Server(this.editedServerName, this.servers.length + 1));
   }
 
   onUpdateServerName(event: Event) {
