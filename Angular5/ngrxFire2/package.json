@@ -10,6 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "module": "commonjs",
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
