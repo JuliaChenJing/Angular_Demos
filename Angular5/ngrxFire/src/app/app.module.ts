@@ -1,10 +1,9 @@
-import { BrowserModule,  } from '@angular/platform-browser';
+import { BrowserModule, } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
-import {StoreModule} from '@ngrx/store';
-import {simpleReducer} from './simple.reducer';
-//import { AppRoutingModule} from './app.routing';
+import { StoreModule } from '@ngrx/store';
+import { simpleReducer } from './simple.reducer';
 
 @NgModule({
   declarations: [
@@ -12,8 +11,7 @@ import {simpleReducer} from './simple.reducer';
   ],
   imports: [
     BrowserModule,
-  //  AppRoutingModule,
-    StoreModule.forRoot({message:simpleReducer})
+    StoreModule.forRoot({ message: simpleReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

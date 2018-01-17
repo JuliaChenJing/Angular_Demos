@@ -17,18 +17,18 @@ interface AppState {
 })
 export class AppComponent {
   message$: Observable<string>;
-  constructor(private store: Store <AppState>) {
+  constructor(private store: Store<AppState>) {
 
     this.message$ = this.store.select('message');
 
   }
 
-  spanishMessage(){
-    this.store.dispatch({type: 'SPANISH'});
+  spanishMessage() {
+    this.store.dispatch({ type: 'Chinese' });
   }
 
-  frenchMessage(){
-    this.store.dispatch({type: 'FRENCH'});
+  frenchMessage() {
+    this.store.dispatch({ type: 'FRENCH' });
   }
 
 
