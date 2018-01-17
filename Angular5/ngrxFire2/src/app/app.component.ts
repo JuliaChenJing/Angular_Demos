@@ -1,11 +1,11 @@
-import { Component,NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+
 
 import { Store } from '@ngrx/store'
 import { Observable } from 'rxjs/Observable';
 
 import { Post } from './models/post.model';
 import * as PostActions from './actions/post.actions';
-
 
 interface AppState {
   post: Post;
@@ -16,7 +16,7 @@ interface AppState {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  post: Store <Post>
+  post: Store<Post>
   text: string;
   constructor(private store: Store<AppState>) {
     this.post = this.store.select('post');

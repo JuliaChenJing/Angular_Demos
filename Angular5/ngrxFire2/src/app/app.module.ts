@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 
-import { NgModule }      from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { postReducer } from './reducers/post.reducer';
 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { postReducer } from './reducers/post.reducer';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     StoreModule.forRoot({
       post: postReducer,
 
