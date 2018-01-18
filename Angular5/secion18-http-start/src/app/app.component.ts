@@ -10,7 +10,9 @@ import { Response } from '@angular/http';
 })
 export class AppComponent {
 
-  appName=this.serverService.getAppName();
+  appName1 = "Test1";
+  appName2 = this.serverService.getAppName();
+
   servers = [
     {
       name: 'First Server',
@@ -24,6 +26,7 @@ export class AppComponent {
     }
   ];
 
+  //it is like a local variable declearation
   constructor(private serverService: ServerService) { }
 
   onAddServer(name: string) {
@@ -54,5 +57,5 @@ export class AppComponent {
     return Math.round(Math.random() * 10000);
   }
 
- 
+
 }

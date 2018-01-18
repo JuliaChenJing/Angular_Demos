@@ -10,6 +10,7 @@ inject the build in  angular http service, which gives us some methods we need f
 @Injectable()
 export class ServerService {
 
+    //it is like a local variable declearation
     constructor(private http: Http) { }
 
     storeServers(servers: any[]) {
@@ -36,9 +37,11 @@ export class ServerService {
     }
 
     getAppName() {
-
         return this.http.get(" https://udemy-ng-http-2d953.firebaseio.com/appName/appName.json")
             .map((response: Response) => {
+
+                console.log("---from getAppName response:--- "+response);
+                console.log("---from getAppName response.json() :--- "+response.json());
                 return response.json();
             })
 
