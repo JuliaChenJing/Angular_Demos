@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ServerService } from 'app/server.service';
+import {Response} from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -41,7 +42,12 @@ constructor(private serverService:ServerService){
 
   onGet(){
     this.serverService.getServers().subscribe(
-      (response)=>console.log(response),
+      (response:Response)=>{
+      
+        const data=response.json();
+        console.log(data);
+
+      },
       (error)=>console.log(error)
     );
   }
