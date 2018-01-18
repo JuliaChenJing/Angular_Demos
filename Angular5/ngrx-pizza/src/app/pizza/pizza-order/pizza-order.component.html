@@ -6,9 +6,19 @@
   <h3>Pizza ID:{{pizza.id}}</h3>
   <p>Size:{{pizza.size}}</p>
 
-  <button>
-
+  <button *ngIf="pizza.size==='small'" (click)="updatePizza(pizza.id,'large')">
+    Upgrade to Large
   </button>
+
+  <button *ngIf="pizza.size==='large'" (click)="updatePizza(pizza.id,'small')">
+    Downgrade to Small
+  </button>
+
+  <button (click)="deletePizza(pizza.id)">
+    Delete
+  </button>
+
+
 </div>
 
 <button (click)="createPizza()">CREATE new Pizza</button>
