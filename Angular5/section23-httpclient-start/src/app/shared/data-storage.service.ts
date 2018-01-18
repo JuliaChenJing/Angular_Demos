@@ -23,13 +23,17 @@ export class DataStorageService {
   getRecipes() {
     const token = this.authService.getToken();
 
-    this.httpClient.get('https://ng-recipe-book-3adbb.firebaseio.com/recipes.json?auth=' + token, {
-      observe: 'response',
-      responseType: 'text'
+    this.httpClient.get<Recipe[]>('https://ng-recipe-book-3adbb.firebaseio.com/recipes.json?auth=' + token, {
+      observe: 'body',
+      responseType: 'json'
     })
       .map((recipes) => {
-        console.log(recipes);
-        return [];
+        for (let recipe of recipes) {
+          if (!recipe['ingredients']) {
+            recipe['ingredients'] = [];
+          }
+        }
+        return recipes;
       })
       .subscribe(
       (recipes: Recipe[]) => {
