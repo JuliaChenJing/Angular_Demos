@@ -1,3 +1,14 @@
-<p>
-  pizza-order works!
-</p>
+<h1>Welcome to Ngrx Pizza</h1>
+
+<div *ngFor="let pizza of pizzas| async">
+
+  <img src="/asets/pizza.jpg" width="200px">
+  <h3>Pizza ID:{{pizza.id}}</h3>
+  <p>Size:{{pizza.size}}</p>
+
+  <button>
+
+  </button>
+</div>
+
+<button (click)="createPizza()">CREATE new Pizza</button>
