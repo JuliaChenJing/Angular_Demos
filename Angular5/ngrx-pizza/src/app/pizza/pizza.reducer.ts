@@ -1,7 +1,7 @@
 import * as actions from './pizza.actions';
 import { EntityState, createEntityAdapter } from '@ngrx/entity'
 import { InitialInputData } from '@angular/core/src/render3/l_node_static';
-
+import { createSelector, createFeatureSelector } from '@ngrx/store';
 //Main data interface
 export interface Pizza {
     id: string;
@@ -37,13 +37,13 @@ export function pizzaReducer(state: State = initialState, action: actions.PizzaA
             }, state);
 
         case actions.DELETE:
-            return pizzaAdaptor.addOne(action.id, state);
+            return pizzaAdaptor.removeOne(action.id, state);
         default:
             return state;
     }
 }
 //Create the default selectors
-export const getPizzaState = createFeatureSelector <State>('pizza');
+export const getPizzaState = createFeatureSelector<State>('pizza');
 
 export const {
     selectIds,
@@ -52,4 +52,3 @@ export const {
     selectTotal,
 } = pizzaAdaptor.getSelectors(getPizzaState);
 
-}
