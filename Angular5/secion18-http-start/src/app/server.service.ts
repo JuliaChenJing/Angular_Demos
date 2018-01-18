@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
+import { AsyncPipe } from '@angular/common';
 /*this decorator is required if you plan on injecting a service into a servie--- 
 inject the build in  angular http service, which gives us some methods we need for
  sending some requests  */
@@ -32,5 +33,15 @@ export class ServerService {
                 console.log(error);
                 return Observable.throw("-------------Something went wrong-------------------");
             });
+    }
+
+    getAppName() {
+
+        return this.http.get(" https://udemy-ng-http-2d953.firebaseio.com/appName/appName.json")
+            .map((response: Response) => {
+                return response.json();
+            })
+
+
     }
 }

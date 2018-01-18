@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 import { ServerService } from 'app/server.service';
 import { Response } from '@angular/http';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  appName=this.serverService.getAppName();
   servers = [
     {
       name: 'First Server',
@@ -50,4 +53,6 @@ export class AppComponent {
   private generateId() {
     return Math.round(Math.random() * 10000);
   }
+
+ 
 }
