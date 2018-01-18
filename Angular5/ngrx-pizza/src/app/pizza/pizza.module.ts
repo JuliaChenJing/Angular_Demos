@@ -10,6 +10,7 @@ import {pizzaReducer} from './pizza.reducer';
     CommonModule,
     StoreModule.forFeature('pizza',pizzaReducer),
   ],
-  declarations: [PizzaOrderComponent]
+  declarations: [PizzaOrderComponent],
+  exports: [PizzaOrderComponent]
 })
 export class PizzaModule { }

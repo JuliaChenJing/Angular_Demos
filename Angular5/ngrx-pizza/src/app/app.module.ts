@@ -3,12 +3,10 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {PizzaModule} from './pizza/pizza.module';
 import{reducers} from'./reducers';
-
 
 @NgModule({
   declarations: [
