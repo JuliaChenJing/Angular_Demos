@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
-
+import { Http, Headers,Response } from '@angular/http';
+import 'rxjs/Rx' ;
 /*this decorator is required if you plan on injecting a service into a servie--- 
 inject the build in  angular http service, which gives us some methods we need for
  sending some requests  */
@@ -18,6 +18,11 @@ export class ServerService {
     }
 
     getServers() {
-        return this.http.get('https://udemy-ng-http-2d953.firebaseio.com/data.json')
+        return this.http.get('https://udemy-ng-http-2d953.firebaseio.com/data.json').map(
+            (response:Response)=>{
+                const data=response.json();
+                return data;
+            }
+        );
     }
 }
