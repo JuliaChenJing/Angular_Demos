@@ -7,7 +7,7 @@ import {pizzaReducer} from './pizza.reducer';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
     StoreModule.forFeature('pizza',pizzaReducer)
   ],
   declarations: [PizzaOrderComponent]

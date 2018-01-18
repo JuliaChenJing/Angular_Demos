@@ -1,5 +1,5 @@
 import * as actions from './pizza.actions';
-import { EntityState, createEntityAdapter } from '@ngrx';
+import { EntityState, createEntityAdapter } from '@ngrx/entity'
 import { InitialInputData } from '@angular/core/src/render3/l_node_static';
 
 //Main data interface
@@ -50,6 +50,6 @@ export const {
     selectEntities,
     selectAll,
     selectTotal,
-} = pizzaAdapter.getSelectors(getPizzaState);
+} = pizzaAdaptor.getSelectors(getPizzaState);
 
 }
