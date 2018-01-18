@@ -21,9 +21,7 @@ export class AppComponent {
     }
   ];
 
-  constructor(private serverService: ServerService) {
-
-  }
+  constructor(private serverService: ServerService) { }
 
   onAddServer(name: string) {
     this.servers.push({
@@ -42,9 +40,10 @@ export class AppComponent {
 
   onGet() {
     this.serverService.getServers().subscribe(
-      (servers: any[]) => { 
-        this.servers=servers;
-        console.log(servers); },
+      (servers: any[]) => {
+        this.servers = servers;
+        console.log(servers);
+      },
       (error) => console.log(error)
     );
   }
