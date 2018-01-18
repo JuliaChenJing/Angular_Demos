@@ -38,6 +38,13 @@ constructor(private serverService:ServerService){
       (error)=>console.log(error)
     );
   }
+
+  onGet(){
+    this.serverService.getServers().subscribe(
+      (response)=>console.log(response),
+      (error)=>console.log(error)
+    );
+  }
   private generateId() {
     return Math.round(Math.random() * 10000);
   }
