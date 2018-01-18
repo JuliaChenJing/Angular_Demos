@@ -9,6 +9,9 @@ import { postReducer } from './reducers/post.reducer';
 
 import { FormsModule } from '@angular/forms';
 
+import {StoreDevtoolsModule} from'@ngrx/store-devtools';
+import { StoreDevtools } from '@ngrx/store-devtools/src/devtools';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,10 +19,14 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     FormsModule,
+
     StoreModule.forRoot({
       post: postReducer,
-
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge:10
     })
+
   ],
   providers: [],
   bootstrap: [AppComponent]
