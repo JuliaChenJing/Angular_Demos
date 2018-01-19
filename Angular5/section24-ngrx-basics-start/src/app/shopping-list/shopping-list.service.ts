@@ -5,17 +5,15 @@ export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredient[]>();
   startedEditing = new Subject<number>();
   private ingredients: Ingredient[] = [
-    //this part does not show the change in the page anymore
-    new Ingredient('Apples', 50),
-    new Ingredient('Tomatoes', 60),
+    //in shopping-list.service.ts, using service is the old way i assume
+    new Ingredient('Apples', 100),
+    new Ingredient('Tomatoes', 100),
   ];
 
- 
 
   getIngredient(index: number) {
     return this.ingredients[index];
   }
-
 
 
   addIngredients(ingredients: Ingredient[]) {

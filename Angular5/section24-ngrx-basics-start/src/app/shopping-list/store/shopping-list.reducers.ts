@@ -4,10 +4,10 @@ and store it in a ShoppingListActions variable as one JavaScript Object
 */
 import * as Shopping_List_Actions from './shopping-list.actions'
 
-//we need to define some initial state for the first run
+//in shopping-list.reducers.ts this is the new way
 const initialState = {
-    ingredients: [new Ingredient('Apple', 5),
-    new Ingredient('Tomato', 10)]
+    ingredients: [new Ingredient('Apple', 200),
+    new Ingredient('Tomato', 200)]
 
 }
 /*the function will receive two arguments. 
