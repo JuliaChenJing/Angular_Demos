@@ -7,6 +7,11 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
+
+  /* we are using Subject, so basically event Emmiters to inform our application whenver something changes
+    Using a Service as a central place is a good practice, and using a Subject to inform the rest 
+    of the application about the changes,so that we can update the UI, is also a very good practice.
+  */ 
   recipesChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
@@ -27,7 +32,7 @@ export class RecipeService {
       ])
   ];
 
-  constructor(private slService: ShoppingListService) {}
+  constructor(private slService: ShoppingListService) { }
 
   setRecipes(recipes: Recipe[]) {
     this.recipes = recipes;
