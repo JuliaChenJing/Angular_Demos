@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import {Store} from '@ngrx/store';
 
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
-import { ShoppingListService } from '../shopping-list/shopping-list.service';
+import * as ShoppingListActions from '../shopping-list/store/shopping-list.actions'
+
 
 @Injectable()
 export class RecipeService {
@@ -24,7 +26,7 @@ export class RecipeService {
         new Ingredient('French Fries', 20)
       ]),
     new Recipe('Big Fat Burger',
-      'What else you need to say?',
+      'A super-tasty Big Fat Burger - just awesome!',
       'https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg',
       [
         new Ingredient('Buns', 2),
@@ -32,7 +34,7 @@ export class RecipeService {
       ])
   ];
 
-  constructor(private slService: ShoppingListService) { }
+  constructor(private store:Store <{ shoppingList: { ingredients: Ingredient[] } }>) { }
 
   setRecipes(recipes: Recipe[]) {
     this.recipes = recipes;
@@ -48,7 +50,7 @@ export class RecipeService {
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
-    this.slService.addIngredients(ingredients);
+  this.store.dispatch(new ShoppingListActions.AddIngredients(ingredients));
   }
 
   addRecipe(recipe: Recipe) {

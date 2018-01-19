@@ -26,6 +26,11 @@ export function shoppingListReducer(state = initialState, action: Shopping_List_
                 ingredient: [...state.ingredients, action.payload]
             }
 
+        case Shopping_List_Actions.ADD_INGREDIENTS:
+            return {
+                ...state,
+                ingredients: [...state.ingredients, ...action.payload]
+            }
         /*behind this scenes,@ngrxwill replace the state with the new one
         even though in this case, they will be equal*/
         default: return state;
