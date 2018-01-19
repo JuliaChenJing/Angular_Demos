@@ -1,8 +1,8 @@
 //action is to be dispatched (派遣，发送)
 import { Action } from '@ngrx/store';
-import { Ingredient } from '../shared/ingredient.model';
+import { Ingredient } from '../../shared/ingredient.model';
 
-export const ADD_INGREDIENT = "ADD_INGREDIENT";//Uppercase is better
+
 
 //we need to define some initial state for the first run
 const initialState = {
