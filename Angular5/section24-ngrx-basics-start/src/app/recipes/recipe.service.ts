@@ -1,13 +1,10 @@
-import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import {Store} from '@ngrx/store';
 
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
-import * as ShoppingListActions from '../shopping-list/store/shopping-list.actions'
 
 
-@Injectable()
+
 export class RecipeService {
 
   /* we are using Subject, so basically event Emmiters to inform our application whenver something changes
@@ -34,7 +31,7 @@ export class RecipeService {
       ])
   ];
 
-  constructor(private store:Store <{ shoppingList: { ingredients: Ingredient[] } }>) { }
+  constructor() { }
 
   setRecipes(recipes: Recipe[]) {
     this.recipes = recipes;
@@ -49,9 +46,6 @@ export class RecipeService {
     return this.recipes[index];
   }
 
-  addIngredientsToShoppingList(ingredients: Ingredient[]) {
-  this.store.dispatch(new ShoppingListActions.AddIngredients(ingredients));
-  }
 
   addRecipe(recipe: Recipe) {
     this.recipes.push(recipe);
