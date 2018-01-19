@@ -25,11 +25,13 @@ export function shoppingListReducer(state = initialState, action: Shopping_List_
             so that all properties of the old object will be added on new object*/
                 ingredient: [...state.ingredients, action.payload]
             }
+
+        /*behind this scenes,@ngrxwill replace the state with the new one
+        even though in this case, they will be equal*/
         default: return state;
     }
 
-    /*behind this scenes,@ngrxwill replace the state with the new one
-     even though in this case, they will be equal*/
-    return state;
+
+
 
 }
