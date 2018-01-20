@@ -11,6 +11,7 @@ import { Store } from "@ngrx/store";
 import { Ingredient } from '../../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
 import * as ShoppingListActions from '../store/shopping-list.actions';
+import { shoppingListReducer } from 'app/shopping-list/store/shopping-list.reducers';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -57,7 +58,10 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
     //if editMode is true,Update, otherwise, Add
     if (this.editMode) {
-      this.slService.updateIngredient(this.editedItemIndex, newIngredient);
+      this.store.dispatch(new ShoppingListActions.UpdateIngredient({
+        index: this.editedItemIndex,
+        ingredient: newIngredient
+      }))
       console.log("edit mode: updateIngredient(this.editedItemIndex, newIngredient)");
     } else {
       this.store.dispatch(new ShoppingListActions.AddIngredient(newIngredient));
@@ -73,7 +77,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   }
 
   onDelete() {
-    this.slService.deleteIngredient(this.editedItemIndex);
+    this.store.dispatch(new ShoppingListActions.DeleteIngredient(this.editedItemIndex));
     this.onClear();
   }
 
