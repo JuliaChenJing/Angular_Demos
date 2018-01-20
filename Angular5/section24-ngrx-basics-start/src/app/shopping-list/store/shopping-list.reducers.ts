@@ -4,10 +4,21 @@ and store it in a ShoppingListActions variable as one JavaScript Object
 */
 import * as Shopping_List_Actions from './shopping-list.actions'
 
+export interface AppState {
+    shoppingList:State;
+}
+export interface State {
+    ingredients: Ingredient[];
+    editedIngredient: Ingredient;
+    editedIngredientIndex: number;
+}
+
 //in shopping-list.reducers.ts this is the new way
-const initialState = {
+const initialState: State = {
     ingredients: [new Ingredient('Apple', 200),
-    new Ingredient('Tomato', 200)]
+    new Ingredient('Tomato', 200)],
+    editedIngredient: null,
+    editedIngredientIndex: -1
 
 }
 /*the function will receive two arguments. 

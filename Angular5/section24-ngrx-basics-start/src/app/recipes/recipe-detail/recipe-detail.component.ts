@@ -7,7 +7,7 @@ import { RecipeService } from '../recipe.service';
 import { Ingredient } from '../../shared/ingredient.model';
 import * as ShoppingListActions from '../../shopping-list/store/shopping-list.actions'
 import { ShoppingEditComponent } from 'app/shopping-list/shopping-edit/shopping-edit.component';
-
+import * as fromShoppingList from '../../shopping-list/store/shopping-list.reducers';
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',

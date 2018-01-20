@@ -11,7 +11,7 @@ import { Store } from "@ngrx/store";
 import { Ingredient } from '../../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
 import * as ShoppingListActions from '../store/shopping-list.actions';
-import { shoppingListReducer } from 'app/shopping-list/store/shopping-list.reducers';
+import * as fromShoppingList from '../store/shopping-list.reducers';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -31,7 +31,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   
   called first time before the ngOnInit()*/
   constructor(private slService: ShoppingListService,
-    private store: Store<{ shoppingList: { ingredients: Ingredient[] } }>) { }
+    private store: Store<fromShoppingList.AppState>) { }
   /*ngOnInit is a life cycle hook called by Angular2 to indicate that Angular is done
    creating the component.
   called after the constructor and called  after the first ngOnChanges() */
@@ -63,7 +63,8 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
         ingredient: newIngredient
       }))
       console.log("edit mode: updateIngredient(this.editedItemIndex, newIngredient)");
-    } else {
+    }
+    else {
       this.store.dispatch(new ShoppingListActions.AddIngredient(newIngredient));
       console.log("not edit mode :addIngredient(newIngredient)");
     }
@@ -84,5 +85,4 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 }
