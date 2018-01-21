@@ -11,7 +11,7 @@ import { simpleReducer } from './simple.reducer';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ message: simpleReducer })
+    StoreModule.forRoot({ messageReducer: simpleReducer })//necessary for store to work
   ],
   providers: [],
   bootstrap: [AppComponent]

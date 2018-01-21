@@ -1,3 +1,8 @@
-{{message$|async}}
+
+<!--interface AppState {
+  message: string; //{{message$|async}} in html file
+}-->
+
+{{message$|async}}<!--unwrap the observalbe using async pipe  -->
 <button (click)="spanishMessage()"> 中文 </button>
 <button (click)="frenchMessage()">French </button>
