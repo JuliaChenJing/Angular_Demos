@@ -9,7 +9,7 @@ import { postReducer } from './reducers/post.reducer';
 
 import { FormsModule } from '@angular/forms';
 
-import {StoreDevtoolsModule} from'@ngrx/store-devtools';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreDevtools } from '@ngrx/store-devtools/src/devtools';
 
 @NgModule({
@@ -19,14 +19,17 @@ import { StoreDevtools } from '@ngrx/store-devtools/src/devtools';
   imports: [
     BrowserModule,
     FormsModule,
-
+    /*If store is to be thought of as your client side database,
+       reducers can be considered the tables in said database.
+        Reducers represent sections, or slices of state within your 
+        application and should be structured and composed accordingly.*/
     StoreModule.forRoot({
       post: postReducer,
     }),
-    StoreDevtoolsModule.instrument({
-      maxAge:10
-    })
 
+    StoreDevtoolsModule.instrument({
+      maxAge: 10
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
