@@ -23,7 +23,7 @@ import { PizzaOrderComponent } from './pizza-order/pizza-order.component';
     ony have one feature, but when you have multiple features, this will keep your code much more 
     organized.
     */
-    //StoreModule.forFeature('pizza', pizzaReducer)
+    //StoreModule.forFeature('pizza', pizzaReducer)  //export const getPizzaState = createFeatureSelector<State>('pizza')
   
     StoreModule.forRoot({pizzaReducer})
   ],

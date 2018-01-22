@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import * as actions from '../pizza.actions';
-import * as fromPizza from '../pizza.reducer';
+import * as fromPizzaReducer from '../pizza.reducer';
 
 @Component({
   selector: 'app-pizza-order',
@@ -13,14 +13,14 @@ export class PizzaOrderComponent implements OnInit {
 
   pizzas: Observable<any>;
 
-  constructor(private store: Store<fromPizza.State>) { }
+  constructor(private store: Store<fromPizzaReducer.State>) { }
 
   ngOnInit() {
-    this.pizzas = this.store.select(fromPizza.selectAll)
+    this.pizzas = this.store.select(fromPizzaReducer.selectAll)
   }
 
   createPizza() {
-    const pizza: fromPizza.Pizza = {
+    const pizza: fromPizzaReducer.Pizza = {
       id: new Date().getUTCMilliseconds().toString(),
       size: 'small'
     }
