@@ -23,14 +23,15 @@ describe("hellotest", () => {
     it('checks if hellotest stars with hello', () => expect('hellotest').toMatch(expectMatch));
 
 })
-
-describe('JavaScript addition operator', function () {
+//don't wanna run a describe, put x in front
+xdescribe('JavaScript addition operator', function () {
     it('adds two numbers together', function () {
         expect(1 + 2).toEqual(3);
     });
 });
 
-describe("A spec", function () {
+//only wanna run a describe ,put f in front
+fdescribe("A spec", function () {
     it("is just a function, so it can contain any code", function () {
         var foo = 0;
         foo += 1;
