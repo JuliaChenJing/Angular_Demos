@@ -31,7 +31,7 @@ xdescribe('JavaScript addition operator', function () {
 });
 
 //only wanna run a describe ,put f in front
-fdescribe("A spec", function () {
+describe("A spec", function () {
     it("is just a function, so it can contain any code", function () {
         var foo = 0;
         foo += 1;
