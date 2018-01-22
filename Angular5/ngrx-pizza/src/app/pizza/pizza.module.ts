@@ -16,7 +16,16 @@ import { PizzaOrderComponent } from './pizza-order/pizza-order.component';
      module, then you use forFeature. 
      
     Otherwise, in your AppModule you use forRoot.*/
-    StoreModule.forFeature('pizza', pizzaReducer),
+
+    /*
+    We are going to add the Store Modle to the import sectino and then call forFeature with the name 
+    of our reducer "pizza" and the reducer itself. This approach is not necessary here because we 
+    ony have one feature, but when you have multiple features, this will keep your code much more 
+    organized.
+    */
+    //StoreModule.forFeature('pizza', pizzaReducer)
+  
+    StoreModule.forRoot({pizzaReducer})
   ],
 
   /*declarations are to make directives (including components and pipes) from the CURRENT MODEL
