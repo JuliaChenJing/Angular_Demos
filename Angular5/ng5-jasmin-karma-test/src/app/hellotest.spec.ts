@@ -1,7 +1,26 @@
 describe("hellotest", () => {
-    it('checks if hellotest is hellotest', () => expect('hellotest').toBe('hellotest'))
+    let expected = '';
+    let notExpected = '';
+    let expectMatch= null;
 
-    it('checks if hellotest is not hellotest', () => expect('hellotest').not.toBe('hellotest123'))
+     //setting the variable
+    beforeEach(() => {
+        expected = 'hellotest';
+        notExpected = 'hellotest123';
+        expectMatch= new RegExp(/^hello/);
+    })
+
+    //cleaning the variable
+    afterEach(() => {
+        expected = '';
+        notExpected = '';
+    })
+
+    it('checks if hellotest is hellotest', () => expect('hellotest').toBe(expected ));
+
+    it('checks if hellotest is not hellotest', () => expect('hellotest').not.toBe(notExpected));
+
+    it('checks if hellotest stars with hello', () => expect('hellotest').toMatch(expectMatch));
 
 })
 
