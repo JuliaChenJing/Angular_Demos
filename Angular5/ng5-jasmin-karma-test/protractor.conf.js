@@ -12,8 +12,8 @@ exports.config = {
     'browserName': 'chrome'
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
-  framework: 'jasmine',
+  baseUrl: 'http://localhost:4200/',//where the project is going to be loaded
+  framework: 'jasmine',//Jasmine
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
