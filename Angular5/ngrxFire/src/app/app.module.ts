@@ -11,6 +11,11 @@ import { simpleReducer } from './simple.reducer';
   ],
   imports: [
     BrowserModule,
+    /*
+    When you have (lazy loaded) feature modules and you want to register reducers within that
+     module, then you use forFeature. 
+     
+    Otherwise, in your AppModule you use forRoot.*/
     StoreModule.forRoot({ messageReducer: simpleReducer })//necessary for store to work
   ],
   providers: [],

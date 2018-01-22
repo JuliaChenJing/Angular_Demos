@@ -11,6 +11,11 @@ import { PizzaOrderComponent } from './pizza-order/pizza-order.component';
   //imports makes the exported declarations of other modules available in the current module
   imports: [
     CommonModule,
+    /*
+    When you have (lazy loaded) feature modules and you want to register reducers within that
+     module, then you use forFeature. 
+     
+    Otherwise, in your AppModule you use forRoot.*/
     StoreModule.forFeature('pizza', pizzaReducer),
   ],
 
