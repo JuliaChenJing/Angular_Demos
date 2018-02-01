@@ -30,7 +30,9 @@ export class AppComponent {
       var range = input.createTextRange();
       range.collapse(true);
       range.moveEnd('character', selectionEnd);
-      range.moveStart('character', selectionStart);
+      range.moveStart
+      
+      ('character', selectionStart);
       range.select();
     }
   }
