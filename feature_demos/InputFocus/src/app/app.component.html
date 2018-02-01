@@ -3,6 +3,11 @@
   <input #myInput type="number" value="3"/> &nbsp;&nbsp;
   <button (click)="setSelectionRange(myTextArea, myInput.value, myInput.value)">Set Caret Position</button>
 </div>
+
+<div>
+  <input #myInput2 type="number"/> &nbsp;&nbsp;
+  <button (click)="setSelectionRange(myTextArea,0,0)">Set to Beginning</button>
+</div>
 <br/><br/>
 <div>
   <textarea rows="4" #myTextArea cols="40">Sample Text Here</textarea>
