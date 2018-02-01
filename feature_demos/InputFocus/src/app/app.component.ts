@@ -34,4 +34,16 @@ export class AppComponent {
       range.select();
     }
   }
+
+  //not working
+  inputFocus(input) {
+    if (input.setSelectionRange) {
+      input.focus();
+    
+    } else if (input.createTextRange) {
+      var range = input.createTextRange();
+      range.collapse(true);
+      range.select();
+    }
+  }
 }
